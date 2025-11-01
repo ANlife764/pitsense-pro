@@ -1,3 +1,2 @@
-data/
-*.csv
-*.pkl
+# Ignore large telemetry data
+data/**/*.csv
