@@ -1,4 +1,6 @@
 # frontend/dashboard.py
+import os
+from dotenv import load_dotenv
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -8,6 +10,8 @@ import joblib
 import requests
 from datetime import datetime
 from sklearn.ensemble import RandomForestRegressor
+
+load_dotenv()
 
 # ADD THE UNIVERSAL TRACK MODEL CLASS DIRECTLY IN THE DASHBOARD
 class UniversalTrackModel:
@@ -253,7 +257,7 @@ class UniversalTrackModel:
 # WEATHER INTEGRATION CLASS
 class RacingWeatherIntegration:
     def __init__(self):
-        self.api_key = "20eaee131a3f89dfdc810da3bfd82872"
+        self.api_key = os.getenv('OPENWEATHER_API_KEY')
         self.track_coordinates = {
             'barber': (33.565, -86.655),
             'cota': (30.133, -97.641),

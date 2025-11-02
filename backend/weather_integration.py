@@ -2,10 +2,14 @@
 import requests
 import pandas as pd
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class RacingWeatherIntegration:
     def __init__(self):
-        self.api_key = "20eaee131a3f89dfdc810da3bfd82872"
+        self.api_key = os.getenv('OPENWEATHER_API_KEY')
         self.track_coordinates = {
             'barber': (33.565, -86.655),  # Barber Motorsports Park
             'cota': (30.133, -97.641),     # Circuit of the Americas
