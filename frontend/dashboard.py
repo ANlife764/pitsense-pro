@@ -13,7 +13,6 @@ from sklearn.ensemble import RandomForestRegressor
 
 load_dotenv()
 
-# ADD THE UNIVERSAL TRACK MODEL CLASS DIRECTLY IN THE DASHBOARD
 class UniversalTrackModel:
     def __init__(self, track_name):
         self.track_name = track_name
